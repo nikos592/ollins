@@ -1,4 +1,5 @@
 import Logo from './Logo';
+import Link from 'next/link';
 
 export default function Header() {
   return (
@@ -6,7 +7,9 @@ export default function Header() {
       <div className="py-2 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Name */}
-          <Logo width={180} height={72} className="w-36 h-14 sm:w-44 sm:h-16 flex-shrink-0" />
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <Logo width={180} height={72} className="w-36 h-14 sm:w-44 sm:h-16 flex-shrink-0" />
+          </Link>
           
           {/* Contact Info */}
           <div className="text-right">
