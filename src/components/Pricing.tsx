@@ -13,13 +13,7 @@ export default function Pricing() {
       </div>
       
       <div className="max-w-4xl mx-auto px-4 py-12 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4 font-montserrat">
-            Комплекс
-          </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full"></div>
-        </div>
+
 
         {/* Pricing Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -28,13 +22,10 @@ export default function Pricing() {
               key={pkg.id}
               className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:border-purple-200 group"
             >
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-gray-800 mb-2 font-montserrat group-hover:text-purple-600 transition-colors">
-                  {pkg.name}
-                </h3>
-                <p className="text-gray-600 text-sm mb-3 leading-relaxed">
-                  {pkg.description}
-                </p>
+                             <div className="text-center">
+                 <p className="text-gray-600 text-sm mb-3 leading-relaxed">
+                   {pkg.description}
+                 </p>
                 <div className="flex justify-between items-center mb-4 text-sm text-gray-500">
                   <span>Длительность:</span>
                   <span className="font-medium">{pkg.duration}</span>
