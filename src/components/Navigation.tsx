@@ -62,6 +62,15 @@ export default function Navigation() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#D573CB] transition-all duration-200 group-hover:w-full"></span>
             </a>
           </li>
+          <li>
+            <a 
+              href="/pricing" 
+              className="text-gray-700 hover:text-[#D573CB] transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-pink-50 relative group font-montserrat"
+            >
+              Цены
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#D573CB] transition-all duration-200 group-hover:w-full"></span>
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
