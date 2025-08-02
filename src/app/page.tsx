@@ -14,10 +14,10 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 font-vertino">
             Добро пожаловать в Ollin's Studio
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-montserrat">
             Мы предлагаем профессиональные услуги депиляции, эпиляции и массажа. 
             Наши мастера используют современное оборудование и качественные материалы 
             для достижения наилучших результатов. Подарите себе заботу и красоту!

@@ -29,7 +29,7 @@ export default function DropdownMenu() {
     <div className="relative flex items-center" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-4 py-2 rounded-md hover:bg-pink-50 relative group flex items-center gap-1"
+        className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-4 py-2 rounded-md hover:bg-pink-50 relative group flex items-center gap-1 font-montserrat"
       >
         Услуги
         <svg 
@@ -49,7 +49,7 @@ export default function DropdownMenu() {
             <a
               key={index}
               href={service.href}
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-colors duration-200 first:rounded-t-md last:rounded-b-md"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-colors duration-200 first:rounded-t-md last:rounded-b-md font-montserrat"
               onClick={() => setIsOpen(false)}
             >
               {service.name}

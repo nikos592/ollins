@@ -4,11 +4,11 @@ export default function Navigation() {
   return (
     <nav className="shadow-lg w-full" style={{ backgroundColor: '#fcfcfc' }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-        <ul className="flex flex-col sm:flex-row justify-center items-center gap-3 text-sm font-medium">
+        <ul className="flex flex-col sm:flex-row justify-center items-center gap-3 text-sm font-medium font-montserrat">
           <li>
             <a 
               href="#home" 
-              className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-pink-50 relative group"
+              className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-pink-50 relative group font-montserrat"
             >
               Главная
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-600 transition-all duration-200 group-hover:w-full"></span>
@@ -20,7 +20,7 @@ export default function Navigation() {
           <li>
             <a 
               href="#masters" 
-              className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-pink-50 relative group"
+              className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-pink-50 relative group font-montserrat"
             >
               Мастера
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-600 transition-all duration-200 group-hover:w-full"></span>
@@ -29,7 +29,7 @@ export default function Navigation() {
           <li>
             <a 
               href="#about" 
-              className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-pink-50 relative group"
+              className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-pink-50 relative group font-montserrat"
             >
               О нас
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-600 transition-all duration-200 group-hover:w-full"></span>
@@ -38,7 +38,7 @@ export default function Navigation() {
           <li>
             <a 
               href="#contacts" 
-              className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-pink-50 relative group"
+              className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-pink-50 relative group font-montserrat"
             >
               Контакты
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-600 transition-all duration-200 group-hover:w-full"></span>
