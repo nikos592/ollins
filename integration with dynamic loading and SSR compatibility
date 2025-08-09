@@ -1,0 +1,166 @@
+[1mdiff --git a/src/app/page.tsx b/src/app/page.tsx[m
+[1mindex 7d4aecb..300e88d 100644[m
+[1m--- a/src/app/page.tsx[m
+[1m+++ b/src/app/page.tsx[m
+[36m@@ -1,29 +1,33 @@[m
+ import Header from '@/components/Header';[m
+ import Navigation from '@/components/Navigation';[m
+ import Footer from '@/components/Footer';[m
+[32m+[m[32mimport DynamicMap from '@/components/DynamicMap';[m
+ [m
+ export default function Home() {[m
+   return ([m
+     <div className="min-h-screen bg-[#FFFEF8]">[m
+       <Header />[m
+[31m-      [m
+[31m-      {/* Navigation */}[m
+       <Navigation />[m
+[31m-      [m
+[31m-      {/* Main Content */}[m
+       <main className="max-w-7xl mx-auto py-8 bg-[#FFFEF8]">[m
+[31m-        [m
+         <div className="text-center mb-8">[m
+           <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 font-vertino">[m
+             Добро пожаловать в Ollin's Studio[m
+           </h2>[m
+           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-montserrat">[m
+[31m-            Мы предлагаем профессиональные услуги депиляции, эпиляции и массажа. [m
+[31m-            Наши мастера используют современное оборудование и качественные материалы [m
+[32m+[m[32m            Мы предлагаем профессиональные услуги депиляции, эпиляции и массажа.[m
+[32m+[m[32m            Наши мастера используют современное оборудование и качественные материалы[m
+             для достижения наилучших результатов. Подарите себе заботу и красоту![m
+           </p>[m
+         </div>[m
+[31m-[m
+[32m+[m[41m        [m
+[32m+[m[32m        {/* Секция с картой */}[m
+[32m+[m[32m        <div className="mb-8">[m
+[32m+[m[32m          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center font-vertino">[m
+[32m+[m[32m            Как нас найти[m
+[32m+[m[32m          </h3>[m
+[32m+[m[32m          <DynamicMap />[m
+[32m+[m[32m        </div>[m
+[32m+[m[41m        [m
+         <Footer />[m
+       </main>[m
+     </div>[m
+[1mdiff --git a/src/components/DynamicMap.tsx b/src/components/DynamicMap.tsx[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6e45fb2[m
+[1m--- /dev/null[m
+[1m+++ b/src/components/DynamicMap.tsx[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m'use client';[m
+[32m+[m
+[32m+[m[32mimport dynamic from 'next/dynamic';[m
+[32m+[m
+[32m+[m[32mconst YandexMap = dynamic(() => import('./YandexMap'), {[m
+[32m+[m[32m  ssr: false,[m
+[32m+[m[32m  loading: () => ([m
+[32m+[m[32m    <div className="w-full h-[605px] max-w-[1201px] mx-auto bg-gray-200 flex items-center justify-center">[m
+[32m+[m[32m      <div className="text-gray-600">Загрузка карты...</div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m  ),[m
+[32m+[m[32m});[m
+[32m+[m
+[32m+[m[32mexport default function DynamicMap() {[m
+[32m+[m[32m  return <YandexMap />;[m
+[32m+[m[32m}[m
+[32m+[m
+[1mdiff --git a/src/components/YandexMap.tsx b/src/components/YandexMap.tsx[m
+[1mnew file mode 100644[m
+[1mindex 0000000..460e569[m
+[1m--- /dev/null[m
+[1m+++ b/src/components/YandexMap.tsx[m
+[36m@@ -0,0 +1,93 @@[m
+[32m+[m[32m'use client';[m
+[32m+[m
+[32m+[m[32mimport { useEffect, useRef, useState } from 'react';[m
+[32m+[m
+[32m+[m[32mexport default function YandexMap() {[m
+[32m+[m[32m  const mapContainerRef = useRef<HTMLDivElement>(null);[m
+[32m+[m[32m  const [isLoading, setIsLoading] = useState(true);[m
+[32m+[m[32m  const [error, setError] = useState<string | null>(null);[m
+[32m+[m
+[32m+[m[32m  useEffect(() => {[m
+[32m+[m[32m    const initMap = () => {[m
+[32m+[m[32m      if (mapContainerRef.current) {[m
+[32m+[m[32m        mapContainerRef.current.id = 'yandex-map';[m
+[32m+[m[32m        console.log('Map container ready');[m
+[32m+[m[32m      }[m
+[32m+[m
+[32m+[m[32m      // Создаем и вставляем скрипт карты[m
+[32m+[m[32m      const script = document.createElement('script');[m
+[32m+[m[32m      script.type = 'text/javascript';[m
+[32m+[m[32m      script.charset = 'utf-8';[m
+[32m+[m[32m      script.async = true;[m
+[32m+[m[32m      script.src = 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A252ab28edc448b5d0449adf77d43853228655d23c7a030480d10cd1bbbfce0c5&amp;width=1201&amp;height=605&amp;lang=ru_RU&amp;scroll=true&amp;id=yandex-map';[m
+[32m+[m[41m      [m
+[32m+[m[32m      script.onload = () => {[m
+[32m+[m[32m        console.log('Script loaded successfully');[m
+[32m+[m[32m        setIsLoading(false);[m
+[32m+[m[41m        [m
+[32m+[m[32m        // Ждем создания карты и перемещаем ее в наш контейнер[m
+[32m+[m[32m        setTimeout(() => {[m
+[32m+[m[32m          const mapElement = document.getElementById('yandex-map');[m
+[32m+[m[32m          const createdMap = document.querySelector('iframe[src*="yandex.ru/map-widget"]');[m
+[32m+[m[41m          [m
+[32m+[m[32m          if (mapElement && createdMap) {[m
+[32m+[m[32m            console.log('Moving map to container');[m
+[32m+[m[32m            // Очищаем контейнер[m
+[32m+[m[32m            mapElement.innerHTML = '';[m
+[32m+[m[32m            // Перемещаем карту в наш контейнер[m
+[32m+[m[32m            mapElement.appendChild(createdMap);[m
+[32m+[m[41m            [m
+[32m+[m[32m            // Применяем стили к iframe[m
+[32m+[m[32m            if (createdMap instanceof HTMLIFrameElement) {[m
+[32m+[m[32m              createdMap.style.width = '100%';[m
+[32m+[m[32m              createdMap.style.height = '100%';[m
+[32m+[m[32m              createdMap.style.border = 'none';[m
+[32m+[m[32m            }[m
+[32m+[m[32m          }[m
+[32m+[m[32m        }, 3000);[m
+[32m+[m[32m      };[m
+[32m+[m[41m      [m
+[32m+[m[32m      script.onerror = () => {[m
+[32m+[m[32m        console.error('Failed to load map script');[m
+[32m+[m[32m        setError('Ошибка загрузки карты');[m
+[32m+[m[32m        setIsLoading(false);[m
+[32m+[m[32m      };[m
+[32m+[m[41m      [m
+[32m+[m[32m      document.head.appendChild(script);[m
+[32m+[m[32m    };[m
+[32m+[m
+[32m+[m[32m    // Небольшая задержка для гарантии, что DOM готов[m
+[32m+[m[32m    const timer = setTimeout(initMap, 100);[m
+[32m+[m
+[32m+[m[32m    return () => {[m
+[32m+[m[32m      clearTimeout(timer);[m
+[32m+[m[32m    };[m
+[32m+[m[32m  }, []);[m
+[32m+[m
+[32m+[m[32m  return ([m
+[32m+[m[32m    <div className="w-full">[m
+[32m+[m[32m      {isLoading && ([m
+[32m+[m[32m        <div className="w-full h-[605px] max-w-[1201px] mx-auto bg-gray-200 flex items-center justify-center">[m
+[32m+[m[32m          <div className="text-gray-600">Загрузка карты...</div>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m      )}[m
+[32m+[m[41m      [m
+[32m+[m[32m      {error && ([m
+[32m+[m[32m        <div className="w-full h-[605px] max-w-[1201px] mx-auto bg-red-100 flex items-center justify-center">[m
+[32m+[m[32m          <div className="text-red-600">{error}</div>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m      )}[m
+[32m+[m[41m      [m
+[32m+[m[32m      <div[m[41m [m
+[32m+[m[32m        ref={mapContainerRef}[m
+[32m+[m[32m        className="w-full h-[605px] max-w-[1201px] mx-auto border-2 border-gray-300"[m
+[32m+[m[32m        style={{[m[41m [m
+[32m+[m[32m          minHeight: '605px',[m
+[32m+[m[32m          backgroundColor: '#f0f0f0',[m
+[32m+[m[32m          position: 'relative'[m
+[32m+[m[32m        }}[m
+[32m+[m[32m      />[m
+[32m+[m[32m    </div>[m
+[
