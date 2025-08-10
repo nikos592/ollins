@@ -6,10 +6,6 @@ const mastersData = [
   {
     id: 1,
     name: "Ольга",
-    specialization: "Мастер",
-    experience: "3 года опыта",
-    image: "/images/masters/anna.jpg",
-    services: ["Лазерная эпиляция", "Обертывания", "Аппаратный массаж"],
     rating: 5.0,
     reviews: 52
   }

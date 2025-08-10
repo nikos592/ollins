@@ -70,3 +70,76 @@ small {
   font-weight: 300;
   font-size: 0.875em;
 }
+
+/* Hide scrollbar for webkit browsers */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom Swiper Styles */
+.services-swiper {
+  padding: 20px 0;
+}
+
+.services-swiper .swiper-slide {
+  width: 400px;
+  max-width: 90vw;
+  transition: all 0.3s ease;
+}
+
+.services-swiper .swiper-slide-active {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.services-swiper .swiper-slide-prev,
+.services-swiper .swiper-slide-next {
+  transform: scale(0.9);
+  opacity: 0.7;
+}
+
+.services-swiper .swiper-button-next,
+.services-swiper .swiper-button-prev {
+  color: #374151;
+  background: rgba(255, 255, 255, 0.9);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.services-swiper .swiper-button-next:hover,
+.services-swiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.services-swiper .swiper-button-next::after,
+.services-swiper .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.services-swiper .swiper-pagination {
+  bottom: 10px;
+}
+
+.services-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.services-swiper .swiper-pagination-bullet-active {
+  background: #fff;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+
