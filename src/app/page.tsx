@@ -14,14 +14,14 @@ export default function Home() {
       <VideoBackground />
 
       <Header />
-      <main className="max-w-7xl mx-auto py-0 bg-[#FFFEF8] mt-0">
+      <main className="max-w-7xl mx-auto py-0 bg-[#FFFEF8] mt-0 pt-16">
         {/* Секция с услугами */}
         <div className="mb-8">
           <ServicesSection />
         </div>
         
         {/* Секция с мастерами */}
-        <div className="mb-8">
+        <div id="masters" className="mb-8">
           <Masters />
         </div>
         
