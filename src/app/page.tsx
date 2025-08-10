@@ -2,6 +2,8 @@ import Header from '@/components/Header';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import DynamicMap from '@/components/DynamicMap';
+import MapButtons from '@/components/MapButtons';
+import Masters from '@/components/Masters';
 
 export default function Home() {
   return (
@@ -9,23 +11,19 @@ export default function Home() {
       <Header />
       <Navigation />
       <main className="max-w-7xl mx-auto py-8 bg-[#FFFEF8]">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 font-vertino">
-            Добро пожаловать в Ollin's Studio
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-montserrat">
-            Мы предлагаем профессиональные услуги депиляции, эпиляции и массажа.
-            Наши мастера используют современное оборудование и качественные материалы
-            для достижения наилучших результатов. Подарите себе заботу и красоту!
-          </p>
+                {/* Секция с мастерами */}
+        <div className="mb-8">
+          <Masters />
         </div>
+        
+
         
         {/* Секция с картой */}
         <div id="how-to-get" className="mb-8">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center font-vertino">
-            Как нас найти
-          </h3>
           <DynamicMap />
+          <div className="mt-6 max-w-[1201px] mx-auto">
+            <MapButtons />
+          </div>
         </div>
         
         <Footer />
