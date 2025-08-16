@@ -18,7 +18,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="pt-16 md:pt-20 pb-2 bg-[#FFFEF8]">
+    <section className="relative pt-8 md:pt-12 pb-2 bg-[#FFFEF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Swiper
           effect={'coverflow'}
@@ -73,18 +73,20 @@ export default function ServicesSection() {
           ))}
         </Swiper>
         
-        {/* Custom Navigation Buttons */}
-        <div className="flex justify-center items-center gap-4 mt-6">
-          <button className="swiper-button-prev !static !w-12 !h-12 !bg-white !text-gray-700 !rounded-full !shadow-md hover:!bg-gray-50 transition-all duration-200">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button className="swiper-button-next !static !w-12 !h-12 !bg-white !text-gray-700 !rounded-full !shadow-md hover:!bg-gray-50 transition-all duration-200">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+        {/* Custom Navigation Buttons - внизу карточек */}
+        <div className="absolute bottom-4 left-0 right-0 z-10 pointer-events-none">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <button className="swiper-button-prev !static !w-12 !h-12 !bg-white !text-gray-700 !rounded-full !shadow-lg hover:!bg-gray-50 transition-all duration-200 pointer-events-auto transform hover:scale-110">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button className="swiper-button-next !static !w-12 !h-12 !bg-white !text-gray-700 !rounded-full !shadow-lg hover:!bg-gray-50 transition-all duration-200 pointer-events-auto transform hover:scale-110">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

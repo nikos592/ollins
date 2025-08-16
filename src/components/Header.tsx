@@ -132,7 +132,7 @@ export default function Header() {
           </button>
         </li>
         <li>
-          <DropdownMenu isMobile={true} />
+          <DropdownMenu isMobile={true} onClose={handleMobileNavClick} />
         </li>
         <li>
           <button 
@@ -242,7 +242,7 @@ export default function Header() {
               
               {/* Logo/Name - по центру */}
               <div className="flex-1 flex items-center justify-center">
-                <Link href="/" className="hover:opacity-80 transition-opacity">
+                <Link href="/" className="hover:opacity-80 transition-opacity" onClick={handleMobileNavClick}>
                   <Logo width={180} height={72} className="w-28 h-10 sm:w-32 sm:h-12 lg:w-36 lg:h-14" />
                 </Link>
               </div>
@@ -254,6 +254,7 @@ export default function Header() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="bg-[#4D4D4D] hover:bg-[#3A3A3A] text-white font-medium transition-all duration-200 px-3 py-2 rounded-full text-sm shadow-md hover:shadow-lg transform hover:scale-105 flex items-center justify-center min-w-[90px] sm:min-w-[100px]"
+                  onClick={handleMobileNavClick}
                 >
                   Записаться
                 </a>

@@ -32,7 +32,7 @@ export default function Masters() {
               className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:border-purple-200 group w-full lg:w-1/3 flex-shrink-0 flex flex-col"
             >
               {/* Master Image */}
-              <div className="w-full h-48 sm:h-64 md:h-80 lg:h-[28rem] rounded-lg mb-4 md:mb-6 overflow-hidden">
+              <div className="w-full h-80 sm:h-96 md:h-[450px] lg:h-[28rem] rounded-lg mb-4 md:mb-6 overflow-hidden">
                 <img 
                   src="/images/masters/master.JPG" 
                   alt={`Фото мастера ${master.name}`}
@@ -43,8 +43,8 @@ export default function Masters() {
               {/* Spacer to push content to bottom */}
               <div className="flex-grow"></div>
 
-              {/* Master Info and Rating - Stacked on mobile, inline on desktop */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2 sm:gap-0">
+              {/* Master Info and Rating - В одну строку на мобильных */}
+              <div className="flex items-center justify-between mb-4 gap-2">
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 font-montserrat">
                   {master.name}
                 </h3>

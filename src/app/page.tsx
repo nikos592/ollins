@@ -36,7 +36,7 @@ export default function Home() {
       <VideoBackground />
 
       <Header />
-      <main className="max-w-7xl mx-auto py-0 bg-[#FFFEF8] mt-0 pt-16">
+      <main className="max-w-7xl mx-auto py-0 bg-[#FFFEF8] mt-0 pt-8">
         {/* Секция с услугами */}
         <div id="services" className="mb-6 sm:mb-8">
           <ServicesSection />
