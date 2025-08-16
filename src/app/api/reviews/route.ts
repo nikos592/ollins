@@ -9,12 +9,8 @@ interface Review {
 }
 
 export async function GET() {
-  try {
-    // URL вашей страницы на Яндекс Картах
-    const yandexUrl = 'https://yandex.ru/maps/org/ollin_s_studio/11176569475/';
-    
-    // Реальные отзывы с Яндекс Карт
-    const reviews: Review[] = [
+  // Временные данные для отзывов
+  const reviews: Review[] = [
       {
         id: '1',
         author: 'Анастасия Л.',
@@ -59,12 +55,5 @@ export async function GET() {
       }
     ];
 
-    return NextResponse.json({ reviews });
-  } catch (error) {
-    console.error('Ошибка при получении отзывов:', error);
-    return NextResponse.json(
-      { error: 'Не удалось загрузить отзывы' },
-      { status: 500 }
-    );
-  }
+  return NextResponse.json({ reviews });
 }

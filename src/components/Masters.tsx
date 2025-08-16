@@ -1,4 +1,3 @@
-import Logo from './Logo';
 import ReviewsParser from './ReviewsParser';
 
 // Данные о мастерах

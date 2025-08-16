@@ -1,4 +1,4 @@
-import Logo from './Logo';
+'use client';
 import { pricingPackages } from '@/data/pricingData';
 
 export default function Pricing() {

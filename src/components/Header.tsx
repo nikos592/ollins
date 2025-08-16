@@ -6,7 +6,6 @@ import DropdownMenu from './DropdownMenu';
 import GalleryModal from './GalleryModal';
 
 export default function Header() {
-  const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,7 +17,7 @@ export default function Header() {
       setIsMobile(mobile);
       
       // На всех экранах хедер виден сразу
-      setIsVisible(true);
+      // setIsVisible(true); // Удалено
       if (!mobile) {
         setIsMobileMenuOpen(false); // Закрываем мобильное меню при переходе на десктоп
       }

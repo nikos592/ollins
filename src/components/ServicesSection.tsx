@@ -1,5 +1,4 @@
 'use client';
-import { pricingPackages, individualZones, wrapServices, massageServices } from '@/data/pricingData';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
