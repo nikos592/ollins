@@ -23,6 +23,12 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* Headings with Vertino font */
@@ -79,6 +85,19 @@ small {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Touch-friendly button styles */
+button, a {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (max-width: 768px) {
+  button, a {
+    min-height: 48px;
+    min-width: 48px;
+  }
 }
 
 /* Custom Swiper Styles */
@@ -190,6 +209,40 @@ small {
   background: #fff;
   opacity: 1;
   transform: scale(1.2);
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  .services-swiper .swiper-slide {
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  .services-swiper .swiper-button-next,
+  .services-swiper .swiper-button-prev {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .gallery-swiper .swiper-button-next,
+  .gallery-swiper .swiper-button-prev {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Touch-friendly focus states */
+button:focus,
+a:focus {
+  outline: 2px solid #D573CB;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling for mobile */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 
