@@ -154,7 +154,7 @@ export default function ReviewsParser() {
             </div>
             
             <p className="text-gray-700 text-sm leading-relaxed font-montserrat mb-2 line-clamp-3">
-              "{review.text}"
+              &ldquo;{review.text}&rdquo;
             </p>
             
             <div className="flex items-center justify-between gap-2">

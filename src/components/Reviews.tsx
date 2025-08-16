@@ -46,7 +46,7 @@ export default function Reviews() {
               </div>
               
               <p className="text-gray-600 mb-4 font-montserrat leading-relaxed">
-                "{review.text}"
+                &ldquo;{review.text}&rdquo;
               </p>
               
               <div className="flex items-center">

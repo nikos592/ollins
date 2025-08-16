@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import DropdownMenu from './DropdownMenu';
 
 export default function Navigation() {
@@ -53,13 +54,13 @@ export default function Navigation() {
         <div className="py-1 px-4 sm:px-6 lg:px-8">
           <ul className="flex flex-col sm:flex-row justify-center items-center gap-3 text-sm font-medium font-montserrat">
             <li>
-              <a 
+              <Link 
                 href="/" 
                 className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-pink-50 relative group font-montserrat"
               >
                 Главная
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-600 transition-all duration-200 group-hover:w-full"></span>
-              </a>
+              </Link>
             </li>
             <li>
               <DropdownMenu />
@@ -115,13 +116,13 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto py-1 px-4 sm:px-6 lg:px-8">
         <ul className="flex flex-col sm:flex-row justify-center items-center gap-3 text-sm font-medium font-montserrat">
           <li>
-            <a 
+            <Link 
               href="/" 
               className="text-gray-700 hover:text-pink-600 transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-pink-50 relative group font-montserrat"
             >
               Главная
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-600 transition-all duration-200 group-hover:w-full"></span>
-            </a>
+            </Link>
           </li>
           <li>
             <DropdownMenu />

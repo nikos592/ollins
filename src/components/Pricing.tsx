@@ -47,7 +47,7 @@ export default function Pricing() {
               </svg>
             </div>
             <span className="text-lg font-semibold text-gray-800 font-montserrat">
-              ollin's studio
+              ollin&apos;s studio
             </span>
           </div>
         </div>
